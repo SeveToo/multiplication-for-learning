@@ -67,8 +67,10 @@ You just need a browser.
 
 download the project and start **index.html**
 
-Made with :heart: by <a href="https://github.com/SeveToo" target="_blank">SeveTo</a>
+## 😎 Made by
+
+Made with by <a href="https://github.com/SeveToo" target="_blank">SeveTo</a>
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top" style="color: #fff; background: black; padding: 15px 30px">Back to top</a>
