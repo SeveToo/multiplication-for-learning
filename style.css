@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --main-color: #191919;
+  --text-color: #dddddd;
+  --second-color: #e43d40;
+
+  --main-font: "Poppins", sans-serif;
+
+  --df-border: 4px solid var(--second-color);
+  scroll-behavior: smooth;
+  --df-padding: 15px;
+  --bg-none: none;
+
+  --big-text-size: 10em;
+  --mid-text-size: 5em;
+  --captions-text-size: 1em;
+  --other-text-size: 2em;
+
+  --def-animation-time: 5s;
+}
+body {
+  background: var(--main-color);
+  font-family: var(--main-font);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainGrid {
+  width: 700px;
+  /* height: 500px; */
+  border: var(--df-border);
+  display: grid;
+  grid-gap: var(--df-padding);
+  grid-template-areas:
+    "time time time time"
+    "mathOp mathOp mathOp correct"
+    "mathOp mathOp mathOp wrong"
+    "options restart answer answer"
+    "menu menu menu menu";
+  grid-template-columns: repeat(3, 1fr) 200px;
+  padding: var(--df-padding);
+}
+
+.time {
+  grid-area: time;
+  position: relative;
+}
+.timeFill {
+  position: absolute;
+  left: 0%;
+  width: 0%;
+  height: 10px;
+  background: var(--second-color);
+  transition: 0.05s linear;
+}
+
+.mathematicalOperation {
+  border-bottom: var(--df-border);
+  border-right: var(--df-border);
+  grid-area: mathOp;
+  font-size: var(--big-text-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 6px;
+  font-weight: 700;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.points .smallTitle {
+  font-size: var(--captions-text-size);
+}
+
+.points .value {
+  font-size: var(--mid-text-size);
+  position: relative;
+}
+
+.correct {
+  grid-area: correct;
+  border-bottom: var(--df-border);
+}
+.wrong {
+  grid-area: wrong;
+  border-bottom: var(--df-border);
+}
+.options {
+  grid-area: options;
+  border-right: var(--df-border);
+}
+
+.restart {
+  grid-area: restart;
+  border-right: var(--df-border);
+}
+
+.options button,
+.restart button {
+  background: var(--bg-none);
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: var(--other-text-size);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.InputBox {
+  /* border-left: var(--df-border); */
+  /* border-right: var(--df-border); */
+  display: flex;
+  grid-area: answer;
+  position: relative;
+}
+.InputBox input {
+  width: 100%;
+  background: var(--bg-none);
+  outline: none;
+  border: none;
+  font-size: var(--mid-text-size);
+  padding: 0 50px;
+  color: var(--text-color);
+}
+
+.InputBox::before {
+  content: "Enter";
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  font-size: var(--captions-text-size);
+}
+
+.menu {
+  grid-area: menu;
+  border-top: var(--df-border);
+  /* background: red; */
+  display: grid;
+  grid-gap: var(--df-padding);
+  grid-template-columns: repeat(4, 1fr);
+  height: 100px;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.selected {
+  position: relative;
+}
+
+.selected::before {
+  color: #a5292b86;
+  content: "💢";
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 6rem;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.optionsClosed {
+  display: none;
+}
