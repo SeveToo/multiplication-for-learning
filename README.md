@@ -1,6 +1,6 @@
 <div align="center" id="top"> 
 <h1 align="center">Multiplication for learning</h1>
-<a href="https://sevetoo.github.io/multiplication-for-learning/"
+<a href="https://sevetoo.github.io/multiplication-for-learning/">
   <img src="./preview.png" alt="Tabliczka Mnożenia Do Nauki" />
  </a>
 
